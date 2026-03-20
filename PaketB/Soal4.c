@@ -17,7 +17,7 @@ void *makanMie(void *arg){
         // (B) [QUESTION] Kunci akses ke variabel global -- (1.5 Points)
         
         if(mangkukTersedia <= 0){
-            // (C) Apa yang harus dilakukan sebelum keluar dari loop? -- (2 Points)
+            // (C) [QUESTION] Apa yang harus dilakukan sebelum keluar dari loop? -- (2 Points)
             break;
         }
         
@@ -38,7 +38,7 @@ void *tampilkanStatus(void *arg){
         // (E) [QUESTION] Kunci akses ke variabel global -- (1.5 Points)
         
         if(mangkukTersedia <= 0){
-            // (F) Apa yang harus dilakukan sebelum keluar dari loop? -- (2 Points)
+            // (F) [QUESTION] Apa yang harus dilakukan sebelum keluar dari loop? -- (2 Points)
             break;
         }
         
@@ -74,13 +74,13 @@ int main (int argc, char *argv[]) {
         // (H) [QUESTION] Buat thread untuk masing-masing kontestan -- (2 Points) 
     }
     
-    // (I) Buat thread untuk menampilkan status -- (1.5 Points)
+    // (I) [QUESTION] Buat thread untuk menampilkan status -- (1.5 Points)
     
 
 
     // Menunggu semua thread kontestan selesai
     for(int i = 0; i < CONTESTANT; i++){
-        // (J) [QUESTION]Tunggu semua thread peserta selesai (join) -- (1.5 Points)
+        // (J) [QUESTION] Tunggu semua thread peserta selesai (join) -- (1.5 Points)
     }
     
     // (K) [QUESTION] Tunggu thread status selesai (join) -- (1.5 Points)
