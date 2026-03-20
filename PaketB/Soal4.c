@@ -8,27 +8,26 @@
 #define CONTESTANT 3
 int mangkukTersedia;
 int mangkukTerkonsumsi[CONTESTANT] = {0};
-// (A) Deklarasikan variabel Mutex di sini! -- (2.5 Points)
+// (A) [QUESTION] Deklarasikan variabel Mutex di sini! -- (1.5 Points)
 
-// Fungsi makanMie (Thread Kontestan)
 void *makanMie(void *arg){
-    int id = *(int *)arg; // Mengambil id kontestan
+    int id = *(int *)arg;
     while (1){
-        // (B) Kunci akses ke variabel global -- (2.5 Points)
+
+        // (B) [QUESTION] Kunci akses ke variabel global -- (1.5 Points)
         
-        // Jika mangkukTersedia <= 0
         if(mangkukTersedia <= 0){
             // (C) Apa yang harus dilakukan sebelum keluar dari loop? -- (2.5 Points)
             break;
         }
         
-        mangkukTersedia--; // Mengurangi jumlah mie tersedia
-        mangkukTerkonsumsi[id]++; // Menambah jumlah mie yang dikonsumsi kontestan
+        mangkukTersedia--;
+        mangkukTerkonsumsi[id]++; 
         printf("Kontestan %d makan 1 mangkuk mie. Sisa di meja: %d\n", id+1, mangkukTersedia);
         
-        // (D) Lepas kembali akses variabel global -- (2.5 Points)
+        // (D) [QUESTION] Lepas kembali akses variabel global -- (1.5 Points)
         
-        sleep(rand() % 5); // Simulasi waktu makan berupa waktu random (0 - 4 detik).
+        sleep(rand() % 5); 
     } 
     return NULL;
 }
@@ -36,9 +35,8 @@ void *makanMie(void *arg){
 // Fungsi tampilkanStatus
 void *tampilkanStatus(void *arg){
     while(1){
-        // (E) Kunci akses ke variabel global -- (2.5 Points)
+        // (E) [QUESTION] Kunci akses ke variabel global -- (1.5 Points)
         
-        // Jika mangkukTersedia <= 0
         if(mangkukTersedia <= 0){
             // (F) Apa yang harus dilakukan sebelum keluar dari loop? -- (2.5 Points)
             break;
@@ -46,15 +44,15 @@ void *tampilkanStatus(void *arg){
         
         printf("\t[PAPAN SKOR] Sisa mangkuk: %d\n\tK1: %d Mangkuk, K2: %d Mangkuk, K3: %d Mangkuk\n", 
             mangkukTersedia, mangkukTerkonsumsi[0], mangkukTerkonsumsi[1], mangkukTerkonsumsi[2]);
-        // (G) Lepas kembali akses variabel global -- (2.5 Points)
-        sleep(2); // Update Status tiap 2 detik (delay)
+        // (G) [QUESTION] Lepas kembali akses variabel global -- (1.5 Points)
+        sleep(2);
     }
     return NULL;
 }
 
 // Fungsi Utama
 int main (int argc, char *argv[]) {
-    srand(time(NULL)); // Inisialisasi waktu random
+    srand(time(NULL));
     
     printf("=== FESTIVAL KICAU MANIA JOMOKERTO ===\n");
     printf("Masukkan jumlah total mangkuk mie ayam (11 - 199): ");
@@ -73,24 +71,22 @@ int main (int argc, char *argv[]) {
     // Buat Thread untuk tiap kontestan
     int ids[CONTESTANT] = {0, 1, 2};
     for(int i = 0; i < CONTESTANT; i++){
-        // (H) Buat thread untuk masing-masing kontestan -- (2.5 Points)
-        
+        // (H) [QUESTION] Buat thread untuk masing-masing kontestan -- (1.5 Points) 
     }
     
-    // (I) Buat thread untuk menampilkan status -- (2.5 Points)
+    // (I) Buat thread untuk menampilkan status -- (1.5 Points)
     
+
 
     // Menunggu semua thread kontestan selesai
     for(int i = 0; i < CONTESTANT; i++){
-        // (J) Tunggu semua thread peserta selesai (join) -- (2.5 Points)
-        
+        // (J) [QUESTION]Tunggu semua thread peserta selesai (join) -- (1.5 Points)
     }
     
-    // (K) Tunggu thread status selesai (join) -- (2.5 Points)
+    // (K) [QUESTION] Tunggu thread status selesai (join) -- (1.5 Points)
     
 
-    // (L) Hancurkan Mutex setelah selesai digunakan -- (2.5 Points)
-    pthread_mutex_destroy(&lock);
+    // (L) [QUESTION] Hancurkan Mutex setelah selesai digunakan -- (1.5 Points)
 
     // Penentuan juara berdasarkan mangkukTerkonsumsi
     printf("\n=== HASIL AKHIR LOMBA MAKAN MIE ===\n");
