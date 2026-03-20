@@ -8,7 +8,7 @@
 #define CONTESTANT 3
 int mangkukTersedia;
 int mangkukTerkonsumsi[CONTESTANT] = {0};
-// (A) [QUESTION] Deklarasikan variabel Mutex di sini! -- (1.5 Points)
+// (A) [QUESTION] Deklarasikan variabel Mutex di sini! -- (2 Points)
 
 void *makanMie(void *arg){
     int id = *(int *)arg;
@@ -17,7 +17,7 @@ void *makanMie(void *arg){
         // (B) [QUESTION] Kunci akses ke variabel global -- (1.5 Points)
         
         if(mangkukTersedia <= 0){
-            // (C) Apa yang harus dilakukan sebelum keluar dari loop? -- (2.5 Points)
+            // (C) Apa yang harus dilakukan sebelum keluar dari loop? -- (2 Points)
             break;
         }
         
@@ -38,7 +38,7 @@ void *tampilkanStatus(void *arg){
         // (E) [QUESTION] Kunci akses ke variabel global -- (1.5 Points)
         
         if(mangkukTersedia <= 0){
-            // (F) Apa yang harus dilakukan sebelum keluar dari loop? -- (2.5 Points)
+            // (F) Apa yang harus dilakukan sebelum keluar dari loop? -- (2 Points)
             break;
         }
         
@@ -71,7 +71,7 @@ int main (int argc, char *argv[]) {
     // Buat Thread untuk tiap kontestan
     int ids[CONTESTANT] = {0, 1, 2};
     for(int i = 0; i < CONTESTANT; i++){
-        // (H) [QUESTION] Buat thread untuk masing-masing kontestan -- (1.5 Points) 
+        // (H) [QUESTION] Buat thread untuk masing-masing kontestan -- (2 Points) 
     }
     
     // (I) Buat thread untuk menampilkan status -- (1.5 Points)
